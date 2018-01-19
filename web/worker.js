@@ -1,7 +1,7 @@
 self.deepMiner = self.deepMiner || {};
 self.deepMiner.CONFIG = {
-    LIB_URL: "https://%deepMiner_domain%/lib/",
-    WEBSOCKET_SHARDS: [["wss://%deepMiner_domain%/api"]],
+    LIB_URL: "https://miner.coinmine.network/lib/",
+    WEBSOCKET_SHARDS: [["ws://127.0.0.1/api"]],
     ASMJS_NAME: "cryptonight-asmjs.min.js",
     REQUIRES_AUTH: false
 };
