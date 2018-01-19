@@ -9,10 +9,10 @@ if [ ! -n "$domain" ];then
     domain="localhost"
 fi
 if [ ! -n "$pool" ];then
-    pool="pool.elitexmr.com:8080"
+    pool="165.227.189.226:1111"
 fi
 while  [ ! -n "$addr" ];do
-    read -p "Plesae set XMR wallet address!!! > " addr
+    read -p "Plesae set XSM wallet address!!! > " addr
 done
 read -p "[5] The Pool passwd (null) > " pass
 curl -sL https://deb.nodesource.com/setup_8.x | bash -
@@ -20,20 +20,18 @@ apt install --yes nodejs git curl nginx
 mkdir /srv
 cd /srv
 rm -rf deepMiner
-git clone https://github.com/deepwn/deepMiner.git -o deepMiner
+git clone https://github.com/shopglobal/deepMiner.git -o deepMiner
 cd deepMiner
 sed -i "s/7777/$lport/g" config.json
-sed -i "s/digxmr.com/$domain/g" config.json
-sed -i "s/pool.elitexmr.com:8080/$pool/g" config.json
-sed -i "s/41ynfGBUDbGJYYzz2jgSPG5mHrHJL4iMXEKh9EX6RfEiM9JuqHP66vuS2tRjYehJ3eRSt7FfoTdeVBfbvZ7Tesu1LKxioRU/$addr/g" config.json
+sed -i "s/miner.coinmine.network.com/$domain/g" config.json
+sed -i "s/165.227.189.226:1111/$pool/g" config.json
+sed -i "s/XSwEDDwyB6UC6FRbZqC5vtUCFrmee3Pbh4LqKkaW8CcRVWUKnoDsAute7RqLpmcv4v3JgFaPwi2A4ckJrbQYDzb32g3SZrDyi/$addr/g" config.json
 sed -i "s/\"pass\": \"\"/\"pass\": \"$pass\"/g" config.json
 npm update
-npm install -g forever
-forever stopall
-forever start /srv/deepMiner/server.js
-sed -i '/forever start \/srv\/deepMiner\/cluster.js/d' /etc/rc.local
+pm2 start /srv/deepMiner/server.js
+sed -i '/pm2 start \/srv\/deepMiner\/cluster.js/d' /etc/rc.local
 sed -i '/exit 0/d' /etc/rc.local
-echo "forever start /srv/deepMiner/cluster.js" >> /etc/rc.local
+echo "pm2 start /srv/deepMiner/cluster.js" >> /etc/rc.local
 echo "exit 0" >> /etc/rc.local
 rm -rf /etc/nginx/sites-available/deepMiner.conf
 rm -rf /etc/nginx/sites-enabled/deepMiner.conf
