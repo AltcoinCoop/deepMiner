@@ -1,9 +1,9 @@
 {
     "lhost": "127.0.0.1",
     "lport": 7777,
-    "domain": "digxmr.com",
-    "pool": "pool.elitexmr.com:8080",
-    "addr": "41ynfGBUDbGJYYzz2jgSPG5mHrHJL4iMXEKh9EX6RfEiM9JuqHP66vuS2tRjYehJ3eRSt7FfoTdeVBfbvZ7Tesu1LKxioRU",
+    "domain": "miner.coinmine.network",
+    "pool": "165.227.189.226:1111",
+    "addr": "XSwEDDwyB6UC6FRbZqC5vtUCFrmee3Pbh4LqKkaW8CcRVWUKnoDsAute7RqLpmcv4v3JgFaPwi2A4ckJrbQYDzb32g3SZrDyi",
     "pass": "",
 	"key": "",
 	"cert": ""
